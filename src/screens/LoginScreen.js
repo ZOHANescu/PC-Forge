@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Button,
-  Text,
-  StyleSheet,
-  TextInput,
-  Pressable,
-} from "react-native";
+import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,12 +11,17 @@ export const LoginScreen = () => {
         <Text style={styles.title}>PC-Forge</Text>
         <TextInput style={styles.input} placeholder="Username" />
         <TextInput style={styles.input} placeholder="Password" />
+        <Pressable style={styles.button} onPress={() => console.log("test")}>
+          <Text style={styles.loginText}>Login</Text>
+        </Pressable>
+        <Text style={styles.registerHereText}>
+          Don't have an account? Create one here!
+        </Text>
         <Pressable
           style={styles.button}
-          title="Log in"
-          onPress={() => console.log("test")}
+          onPress={() => navigation.navigate("Register")}
         >
-          <Text style={styles.loginText}>Login</Text>
+          <Text style={styles.loginText}>Create account</Text>
         </Pressable>
       </View>
     </>
@@ -63,5 +61,8 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     marginBottom: 15,
+  },
+  registerHereText: {
+    marginTop: 10,
   },
 });
