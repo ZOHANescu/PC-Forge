@@ -6,9 +6,13 @@ export const RegisterScreen = () => {
     <>
       <View style={styles.container}>
         <Text>Enter a username</Text>
+
         <TextInput style={styles.input} placeholder="username" />
+
         <Text>Enter a password</Text>
+
         <TextInput style={styles.input} placeholder="password" />
+
         <Pressable style={styles.registerButton}>
           <Text style={styles.registerText}>Register</Text>
         </Pressable>

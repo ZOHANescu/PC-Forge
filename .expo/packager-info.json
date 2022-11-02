@@ -1,9 +1,9 @@
 {
   "expoServerPort": null,
-  "packagerPort": null,
+  "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://gk-y7g.anonymous.pc-forge.exp.direct",
+  "packagerNgrokUrl": "https://gk-y7g.anonymous.pc-forge.exp.direct",
+  "ngrokPid": 29254,
   "webpackServerPort": null
 }
