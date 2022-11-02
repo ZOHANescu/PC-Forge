@@ -1,34 +1,73 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Pressable,
+  KeyboardAvoidingView,
+} from "react-native";
+import { auth } from "../../firebase";
 
 export const LoginScreen = ({ navigation }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigation.replace("Seller");
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
+  const handleLogin = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log("Logged in with " + user.email);
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <>
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container}>
         <Text style={styles.title}>PC-Forge</Text>
 
-        <TextInput style={styles.input} placeholder="Username" />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          onChangeText={(text) => setEmail(text)}
+          value={email}
+        />
 
-        <TextInput style={styles.input} placeholder="Password" />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          onChangeText={(text) => setPassword(text)}
+          value={password}
+          secureTextEntry
+        />
 
-        <Pressable style={styles.button} onPress={() => console.log("test")}>
+        <Pressable style={styles.button} onPress={handleLogin}>
           <Text style={styles.loginText}>Login</Text>
         </Pressable>
 
         <Text style={styles.registerHereText}>
           Don't have an account? Create one here!
         </Text>
-        
+
         <Pressable
           style={styles.button}
           onPress={() => navigation.navigate("Register")}
         >
           <Text style={styles.loginText}>Create account</Text>
         </Pressable>
-      </View>
+      </KeyboardAvoidingView>
     </>
   );
 };

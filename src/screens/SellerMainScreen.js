@@ -1,11 +1,28 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
+import { auth } from "../../firebase";
+import { useNavigation } from "@react-navigation/core";
 
-const SellerMainScreen = () => {
+export const SellerMainScreen = () => {
+  const navigation = useNavigation();
+
+  const handleSignOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigation.replace("Login");
+      })
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <>
       <View style={styles.container}>
-        <Text>Seller Screen</Text>
+        <Text>Email: {auth.currentUser?.email}</Text>
+
+        <Pressable style={styles.button} onPress={handleSignOut}>
+          <Text>Sign Out</Text>
+        </Pressable>
       </View>
     </>
   );
@@ -18,6 +35,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    elevation: 3,
+    backgroundColor: "purple",
+    marginTop: 10,
+  },
 });
-
-export default SellerMainScreen;

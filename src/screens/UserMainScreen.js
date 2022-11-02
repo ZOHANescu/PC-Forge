@@ -1,23 +1,21 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
 
-const UserMainScreen = () => {
+export const UserMainScreen = () => {
   return (
     <>
-        <View style={styles.container}>
-            <Text>User Screen</Text>
-        </View>
+      <View style={styles.container}>
+        <Text>User Screen</Text>
+      </View>
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
     backgroundColor: "#9E7BFF",
     alignItems: "center",
     justifyContent: "center",
-  }
+  },
 });
-
-export default UserMainScreen
