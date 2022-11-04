@@ -9,14 +9,14 @@ import {
 } from "react-native";
 import { auth } from "../../firebase";
 
-export const LoginScreen = ({ navigation }) => {
+export const LoginScreen = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("User");
+        props.navigation.replace("User");
       }
     });
 

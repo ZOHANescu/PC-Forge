@@ -1,25 +1,14 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  Image,
-  TouchableOpacity,
-} from "react-native";
-
 import React from "react";
 import { auth } from "../../firebase";
-import { useNavigation } from "@react-navigation/core";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const signOutIcon = require("../../assets/signOut-icon.png");
 const searchIcon = require("../../assets/search-icon.png");
 const chatIcon = require("../../assets/chat-icon.png");
 const cartIcon = require("../../assets/cart-icon.png");
 
-export const UserMainScreen = () => {
-  const navigation = useNavigation();
-
+export const UserMainScreen = ({ navigation }) => {
   const handleSignOut = () => {
     auth
       .signOut()
@@ -45,7 +34,7 @@ export const UserMainScreen = () => {
           style={{
             fontSize: 40,
             fontWeight: "bold",
-            marginTop: 30,
+            marginTop: 100,
             alignSelf: "center",
           }}
         >
@@ -53,17 +42,35 @@ export const UserMainScreen = () => {
         </Text>
 
         <View style={styles.mainButtonContainer}>
-          <TouchableOpacity style={styles.buttonStyle}>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => {
+              navigation.replace("Browse");
+              console.log("LOG: browse screen");
+            }}
+          >
             <Image source={searchIcon} style={styles.imageStyle}></Image>
-            <Text style={styles.buttonText}>Search</Text>
+            <Text style={styles.buttonText}>Browse</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonStyle}>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => {
+              navigation.replace("Chat");
+              console.log("LOG: chat screen");
+            }}
+          >
             <Image source={chatIcon} style={styles.imageStyle}></Image>
             <Text style={styles.buttonText}>Messages</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonStyle}>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => {
+              navigation.replace("Cart");
+              console.log("LOG: cart screen");
+            }}
+          >
             <Image source={cartIcon} style={styles.imageStyle}></Image>
             <Text style={styles.buttonText}>My Cart</Text>
           </TouchableOpacity>
@@ -97,7 +104,7 @@ const styles = StyleSheet.create({
   signOutContainer: {
     alignSelf: "flex-Start",
     position: "absolute",
-    marginTop: -50,
+    marginTop: 0,
   },
   mainButtonContainer: {
     flex: 0.5,
@@ -107,20 +114,24 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     margin: 10,
-    padding: 0,
+    padding: 10,
     backgroundColor: "#AC4FCE",
     borderRadius: 10,
     marginTop: 25,
+    height: 120,
+    width: 120,
   },
   buttonText: {
     alignSelf: "center",
     fontWeight: "bold",
     fontSize: 20,
-    bottom: 15,
+    bottom: 1,
   },
   imageStyle: {
-    resizeMode: "center",
-    width: 110,
-    height: 85,
+    alignSelf: "center",
+    justifyContent: "center",
+    resizeMode: "contain",
+    height: 60,
+    width: 40,
   },
 });
