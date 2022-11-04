@@ -16,7 +16,7 @@ export const LoginScreen = ({ navigation }) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("Seller");
+        navigation.replace("User");
       }
     });
 
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#CCCCFF",
+    backgroundColor: "#8A62F8",
   },
   button: {
     alignItems: "center",
