@@ -7,7 +7,10 @@ const ChatScreen = ({ navigation }) => {
       <Text>ChatScreen</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("User")}
+        onPress={() => {
+          console.log("LOG: back");
+          navigation.navigate("User");
+        }}
       >
         <Text>Back</Text>
       </TouchableOpacity>

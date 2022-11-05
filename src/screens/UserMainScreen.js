@@ -14,6 +14,7 @@ export const UserMainScreen = ({ navigation }) => {
       .signOut()
       .then(() => {
         navigation.replace("Login");
+        console.log("LOG: Signed out");
       })
       .catch((error) => alert(error.message));
   };
@@ -78,7 +79,7 @@ export const UserMainScreen = ({ navigation }) => {
 
         <View
           style={{
-            flex: 1,
+            //flex: 1,
             justifyContent: "flex-end",
             marginHorizontal: 10,
           }}
@@ -107,10 +108,10 @@ const styles = StyleSheet.create({
     marginTop: 0,
   },
   mainButtonContainer: {
-    flex: 0.5,
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 180,
+    marginTop: 40,
   },
   buttonStyle: {
     margin: 10,

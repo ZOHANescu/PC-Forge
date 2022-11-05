@@ -27,7 +27,7 @@ export const RegisterScreen = () => {
   return (
     <>
       <KeyboardAvoidingView style={styles.container}>
-        <Text>Enter a username</Text>
+        <Text>Enter a valid email</Text>
 
         <TextInput
           style={styles.input}

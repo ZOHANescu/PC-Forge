@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  View,
   Text,
   StyleSheet,
   TextInput,
@@ -63,7 +62,7 @@ export const LoginScreen = (props) => {
 
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Register")}
+          onPress={() => props.navigation.navigate("Register")}
         >
           <Text style={styles.loginText}>Create account</Text>
         </Pressable>

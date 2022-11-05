@@ -8,7 +8,10 @@ const BrowseScreen = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("User")}
+        onPress={() => {
+          console.log("LOG: back");
+          navigation.navigate("User");
+        }}
       >
         <Text>Back</Text>
       </TouchableOpacity>
