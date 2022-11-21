@@ -8,12 +8,12 @@ const searchIcon = require("../../assets/search-icon.png");
 const chatIcon = require("../../assets/chat-icon.png");
 const cartIcon = require("../../assets/cart-icon.png");
 
-export const UserMainScreen = ({ navigation }) => {
+export const UserMainScreen = (props) => {
   const handleSignOut = () => {
     auth
       .signOut()
       .then(() => {
-        navigation.replace("Login");
+        props.navigation.replace("Login");
         console.log("LOG: Signed out");
       })
       .catch((error) => alert(error.message));
@@ -46,7 +46,7 @@ export const UserMainScreen = ({ navigation }) => {
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => {
-              navigation.replace("Browse");
+              props.navigation.navigate("Browse");
               console.log("LOG: browse screen");
             }}
           >
@@ -57,7 +57,7 @@ export const UserMainScreen = ({ navigation }) => {
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => {
-              navigation.replace("Chat");
+              props.navigation.navigate("Chat");
               console.log("LOG: chat screen");
             }}
           >
@@ -68,7 +68,7 @@ export const UserMainScreen = ({ navigation }) => {
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => {
-              navigation.replace("Cart");
+              props.navigation.navigate("Cart");
               console.log("LOG: cart screen");
             }}
           >

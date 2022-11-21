@@ -2,21 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
 const BrowseScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Text>BrowseScreen</Text>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          console.log("LOG: back");
-          navigation.navigate("User");
-        }}
-      >
-        <Text>Back</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 const styles = StyleSheet.create({
