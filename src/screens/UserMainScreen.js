@@ -2,6 +2,7 @@ import React from "react";
 import { auth } from "../../firebase";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import appColorConstants from "../utils/app-color-constants";
 
 const signOutIcon = require("../../assets/signOut-icon.png");
 const searchIcon = require("../../assets/search-icon.png");
@@ -100,7 +101,7 @@ export const UserMainScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#9E7BFF",
+    backgroundColor: appColorConstants.MAIN_BACKGROUND_COLOR,
   },
   signOutContainer: {
     alignSelf: "flex-Start",
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   buttonStyle: {
     margin: 10,
     padding: 10,
-    backgroundColor: "#AC4FCE",
+    backgroundColor: "#AC2FCE",
     borderRadius: 10,
     marginTop: 25,
     height: 120,

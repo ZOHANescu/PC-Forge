@@ -8,7 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BrowseScreen from "./src/screens/BrowseScreen";
 import CartScreen from "./src/screens/CartScreen";
 import ChatScreen from "./src/screens/ChatScreen";
-import AppColorConstants from "./src/utils/app-color-constants";
+import appColorConstants from "./src/utils/app-color-constants";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,24 +41,19 @@ export default function App(props) {
           component={BrowseScreen}
           options={{
             headerStyle: {
-              backgroundColor: AppColorConstants.BACKGROUND,
+              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
             },
-            headerTintColor: AppColorConstants.HEADER_GOBACK_COLOR,
+            headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}
-          // options={{
-          //   header: (props) => (
-          //     <CustomNavigationBar {...props} title={"Browse"} />
-          //   ),
-          // }}
         />
         <Stack.Screen
           name="Cart"
           component={CartScreen}
           options={{
             headerStyle: {
-              backgroundColor: AppColorConstants.BACKGROUND,
+              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
             },
-            headerTintColor: AppColorConstants.HEADER_GOBACK_COLOR,
+            headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}
         />
         <Stack.Screen
@@ -66,9 +61,9 @@ export default function App(props) {
           component={ChatScreen}
           options={{
             headerStyle: {
-              backgroundColor: AppColorConstants.BACKGROUND,
+              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
             },
-            headerTintColor: AppColorConstants.HEADER_GOBACK_COLOR,
+            headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}
         />
       </Stack.Navigator>

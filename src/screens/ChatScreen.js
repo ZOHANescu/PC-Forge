@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import appColorConstants from "../utils/app-color-constants";
 
 const ChatScreen = ({ navigation }) => {
   return <View style={styles.container}></View>;
@@ -8,17 +9,9 @@ const ChatScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#9E7BFF",
+    backgroundColor: appColorConstants.MAIN_BACKGROUND_COLOR,
     alignItems: "center",
     justifyContent: "center",
-  },
-  button: {
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 10,
-    elevation: 3,
-    backgroundColor: "purple",
-    marginTop: 10,
   },
 });
 
