@@ -28,6 +28,19 @@ export default function OrderCard(props) {
 
             </View>
 
+            <View style={styles.chatButtonAndStatusBar}>
+
+                <ButtonWithText 
+                    buttonText={"Chat"}
+                    buttonTextStyle={styles.chatButtonContainer}
+                />
+
+                <View style={styles.statusContainer}>
+                    <Text style={{ fontWeight: appColorConstants.FONT_WEIGHT_HARD }}>STATUS</Text>
+                </View>
+
+            </View>
+
         </View>
     )
 }
@@ -61,5 +74,22 @@ const styles = StyleSheet.create({
         fontWeight: appColorConstants.FONT_WEIGHT_LOW,
         color: appColorConstants.COLOR_DARK_RED,
         marginTop: 10
+    },
+    chatButtonAndStatusBar: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginTop: 12
+    },
+    chatButtonContainer: {
+        color: appColorConstants.COLOR_BLACK,
+        fontWeight: appColorConstants.FONT_WEIGHT_HARD,
+        fontSize: appColorConstants.FONT_SIZE_MEDIUM,
+    },
+    statusContainer: {
+        backgroundColor: appColorConstants.COLOR_PURPLE,
+        paddingVertical: 16,
+        paddingHorizontal: 30,
+        borderRadius: appColorConstants.BUTTON_RADIUS,
     }
 })

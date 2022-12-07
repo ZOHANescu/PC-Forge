@@ -25,4 +25,6 @@ export default {
     COLOR_GRAY_2: '#969696',
     COLOR_GRAY_3: '#CDCDCD',
     COLOR_GRAY_4: '#F0F0F0',
+
+    BUTTON_RADIUS: 20
 };
