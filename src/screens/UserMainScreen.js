@@ -80,7 +80,6 @@ export const UserMainScreen = (props) => {
 
         <View
           style={{
-            //flex: 1,
             justifyContent: "flex-end",
             marginHorizontal: 10,
           }}
@@ -101,7 +100,7 @@ export const UserMainScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: appColorConstants.MAIN_BACKGROUND_COLOR,
+    backgroundColor: appColorConstants.BACKGROUND_BEIGE,
   },
   signOutContainer: {
     alignSelf: "flex-Start",
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
   buttonStyle: {
     margin: 10,
     padding: 10,
-    backgroundColor: "#AC2FCE",
+    backgroundColor: appColorConstants.COLOR_LAVANDER,
     borderRadius: 10,
     marginTop: 25,
     height: 120,

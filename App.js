@@ -1,13 +1,16 @@
 import React from "react";
+
 import { LoginScreen } from "./src/screens/LoginScreen";
 import { RegisterScreen } from "./src/screens/RegisterScreen";
 import { UserMainScreen } from "./src/screens/UserMainScreen";
 import { SellerMainScreen } from "./src/screens/SellerMainScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import BrowseScreen from "./src/screens/BrowseScreen";
 import CartScreen from "./src/screens/CartScreen";
 import ChatScreen from "./src/screens/ChatScreen";
+
 import appColorConstants from "./src/utils/app-color-constants";
 
 const Stack = createNativeStackNavigator();
@@ -24,7 +27,12 @@ export default function App(props) {
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerStyle: {
+              backgroundColor: appColorConstants.COLOR_LAVANDER,
+            },
+            headerTintColor: appColorConstants.HEADER_FONT_COLOR,
+          }}
         />
         <Stack.Screen
           name="User"
@@ -41,7 +49,7 @@ export default function App(props) {
           component={BrowseScreen}
           options={{
             headerStyle: {
-              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
+              backgroundColor: appColorConstants.COLOR_LAVANDER,
             },
             headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}
@@ -51,7 +59,7 @@ export default function App(props) {
           component={CartScreen}
           options={{
             headerStyle: {
-              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
+              backgroundColor: appColorConstants.COLOR_LAVANDER,
             },
             headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}
@@ -61,7 +69,7 @@ export default function App(props) {
           component={ChatScreen}
           options={{
             headerStyle: {
-              backgroundColor: appColorConstants.HEADER_BACKGROUND_COLOR,
+              backgroundColor: appColorConstants.COLOR_LAVANDER,
             },
             headerTintColor: appColorConstants.HEADER_FONT_COLOR,
           }}

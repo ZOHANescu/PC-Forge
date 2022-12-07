@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import {
   Text,
   StyleSheet,
@@ -6,9 +7,13 @@ import {
   Pressable,
   KeyboardAvoidingView,
 } from "react-native";
+
+import appColorConstants from "../utils/app-color-constants";
+
 import { auth } from "../../firebase";
 
 export const LoginScreen = (props) => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -40,6 +45,7 @@ export const LoginScreen = (props) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor={appColorConstants.COLOR_BLACK}
           onChangeText={(text) => setEmail(text)}
           value={email}
         />
@@ -47,6 +53,7 @@ export const LoginScreen = (props) => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor={appColorConstants.COLOR_BLACK}
           onChangeText={(text) => setPassword(text)}
           value={password}
           secureTextEntry
@@ -74,7 +81,7 @@ export const LoginScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#9E7BFF",
+    backgroundColor: appColorConstants.BACKGROUND_BEIGE,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -85,7 +92,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#8A62F8",
+    backgroundColor: appColorConstants.COLOR_LAVANDER,
   },
   button: {
     alignItems: "center",
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: "purple",
+    backgroundColor: appColorConstants.COLOR_PURPLE,
     marginTop: 10,
   },
   loginText: {

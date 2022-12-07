@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   View,
   Pressable,
@@ -7,10 +8,14 @@ import {
   TextInput,
   KeyboardAvoidingView,
 } from "react-native";
-import { auth } from "../../firebase";
 import { useState } from "react";
 
+import appColorConstants from "../utils/app-color-constants";
+
+import { auth } from "../../firebase";
+
 export const RegisterScreen = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,6 +41,7 @@ export const RegisterScreen = () => {
             setEmail(text);
           }}
           placeholder="Email"
+          placeholderTextColor={appColorConstants.COLOR_BLACK}
         />
 
         <Text>Enter a password</Text>
@@ -47,6 +53,7 @@ export const RegisterScreen = () => {
             setPassword(text);
           }}
           placeholder="Password"
+          placeholderTextColor={appColorConstants.COLOR_BLACK}
           secureTextEntry
         />
 
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#9E7BFF",
+    backgroundColor: appColorConstants.BACKGROUND_BEIGE,
   },
   input: {
     height: 35,
@@ -74,7 +81,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#CCCCFF",
+    backgroundColor: appColorConstants.COLOR_LAVANDER,
   },
   registerButton: {
     alignItems: "center",
@@ -83,7 +90,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: "purple",
+    backgroundColor: appColorConstants.COLOR_PURPLE,
     marginTop: 10,
   },
   registerText: {

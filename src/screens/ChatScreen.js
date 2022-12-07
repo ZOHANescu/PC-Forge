@@ -9,7 +9,7 @@ const ChatScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: appColorConstants.MAIN_BACKGROUND_COLOR,
+    backgroundColor: appColorConstants.BACKGROUND_BEIGE,
     alignItems: "center",
     justifyContent: "center",
   },

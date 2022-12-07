@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+
 import appColorConstants from "../utils/app-color-constants";
 
 const CartScreen = ({ navigation }) => {
@@ -9,7 +10,7 @@ const CartScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: appColorConstants.MAIN_BACKGROUND_COLOR,
+    backgroundColor: appColorConstants.BACKGROUND_BEIGE,
     alignItems: "center",
     justifyContent: "center",
   },
