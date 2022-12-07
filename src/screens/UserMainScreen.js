@@ -28,7 +28,14 @@ export const UserMainScreen = (props) => {
             style={styles.signOutContainer}
             onPress={handleSignOut}
           >
-            <Image source={signOutIcon}></Image>
+            <Image 
+                source={signOutIcon} 
+                style={{
+                    resizeMode: 'contain',
+                    height: 65,
+                    width: 65
+                }}
+            />
           </TouchableOpacity>
         </View>
 
@@ -69,12 +76,12 @@ export const UserMainScreen = (props) => {
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => {
-              props.navigation.navigate("Cart");
-              console.log("LOG: cart screen");
+              props.navigation.navigate("Orders");
+              console.log("LOG: orders screen");
             }}
           >
             <Image source={cartIcon} style={styles.imageStyle}></Image>
-            <Text style={styles.buttonText}>My Cart</Text>
+            <Text style={styles.buttonText}>My Orders</Text>
           </TouchableOpacity>
         </View>
 
@@ -119,8 +126,8 @@ const styles = StyleSheet.create({
     backgroundColor: appColorConstants.COLOR_LAVANDER,
     borderRadius: 10,
     marginTop: 25,
-    height: 120,
-    width: 120,
+    height: 135,
+    width: 135,
   },
   buttonText: {
     alignSelf: "center",

@@ -8,7 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import BrowseScreen from "./src/screens/BrowseScreen";
-import CartScreen from "./src/screens/CartScreen";
+import OrdersScreen from "./src/screens/OrdersScreen";
 import ChatScreen from "./src/screens/ChatScreen";
 
 import appColorConstants from "./src/utils/app-color-constants";
@@ -55,8 +55,8 @@ export default function App(props) {
           }}
         />
         <Stack.Screen
-          name="Cart"
-          component={CartScreen}
+          name="Orders"
+          component={OrdersScreen}
           options={{
             headerStyle: {
               backgroundColor: appColorConstants.COLOR_LAVANDER,

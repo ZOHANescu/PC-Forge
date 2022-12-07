@@ -48,6 +48,7 @@ export const LoginScreen = (props) => {
           placeholderTextColor={appColorConstants.COLOR_BLACK}
           onChangeText={(text) => setEmail(text)}
           value={email}
+          autoCapitalize='none'
         />
 
         <TextInput
@@ -56,6 +57,7 @@ export const LoginScreen = (props) => {
           placeholderTextColor={appColorConstants.COLOR_BLACK}
           onChangeText={(text) => setPassword(text)}
           value={password}
+          autoCapitalize='none'
           secureTextEntry
         />
 

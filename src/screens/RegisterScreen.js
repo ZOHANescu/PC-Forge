@@ -42,6 +42,7 @@ export const RegisterScreen = () => {
           }}
           placeholder="Email"
           placeholderTextColor={appColorConstants.COLOR_BLACK}
+          autoCapitalize='none'
         />
 
         <Text>Enter a password</Text>
@@ -54,6 +55,7 @@ export const RegisterScreen = () => {
           }}
           placeholder="Password"
           placeholderTextColor={appColorConstants.COLOR_BLACK}
+          autoCapitalize='none'
           secureTextEntry
         />
 
